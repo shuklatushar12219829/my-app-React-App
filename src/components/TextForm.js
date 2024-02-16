@@ -39,17 +39,17 @@ const handleExtraSpaces = () => {
           <h1>{props.heading} </h1>
             <textarea className="form-control" value={text} onChange={onChangeHandler} id="exampleFormControlTextarea1" rows="15"></textarea>
             </div>
-            <button className="btn btn-primary mx-2" onClick={toUpper}>Convert to uppercase</button>
-            <button className="btn btn-primary mx-2" onClick={toLower}>Convert to lowercase</button>
-            <button className="btn btn-primary mx-2" onClick={clear}>Clear Text</button>
-            <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy to clipboard</button>
-            <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={toUpper}>Convert to uppercase</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={toLower}>Convert to lowercase</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={clear}>Clear Text</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy to clipboard</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
         <div>
           <h2>Your text Summary</h2>
           <p>{text===""?"0":text.split(" ").length} words and {text.length} Character</p>
           <p>{.008 *(text===""?"0":text.split(" ").length)} Minutes read</p>
           <h2>Preview</h2>
-          <p>{text.length>0?text:'Enter your text'}</p>
+          <p>{text.length>0?text:'Nothing to preview!!'}</p>
         </div>
     </div>
   )

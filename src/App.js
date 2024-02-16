@@ -9,7 +9,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 function App() {
   const [mode,setMode]=useState('dark');
@@ -28,13 +28,13 @@ function App() {
     if(mode ==='light'){
       setMode('dark')
       showAlert("Dark mode has been enabled","success")
-      document.title="TextUtils - Dark Mode";
-      setInterval(() => {
-        document.title="TextUtils is Amazing Mode";
-      }, 200);
-      setInterval(() => {
-        document.title="Install TextUtils Now";
-      }, 500);
+      // document.title="TextUtils - Dark Mode";
+      // setInterval(() => {
+      //   document.title="TextUtils is Amazing Mode";
+      // }, 200);
+      // setInterval(() => {
+      //   document.title="Install TextUtils Now";
+      // }, 500);
     }else{
       setMode('light')
       showAlert("Light mode has been enabled","success")
@@ -50,7 +50,7 @@ function App() {
     <div className="container">
       <Routes>
           <Route exact path="/" element={<TextForm heading="Enter Text To analyze" showAlert={showAlert}/>}/>
-          <Route exact path="/About" element={<About/>}/>
+          <Route exact path="/About" element={<About mode={mode}/>}/>
       </Routes>
         
     {/* <About/> */}
